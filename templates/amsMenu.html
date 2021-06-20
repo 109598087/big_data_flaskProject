@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+            crossorigin="anonymous"></script>
+</head>
+
+<body>
+<form name="form" method="POST">
+    <figure class="text-center">
+        <blockquote class="blockquote">
+            <p class="fw-bold fs-1">人流管制系統</p>
+        </blockquote>
+        <figcaption class="figure-caption">
+            <p class="fw-bold fs-2">管理平台</p>
+        </figcaption>
+    </figure>
+
+    <div class="form-floating">
+        <select id="agentName" class="form-select" name="agentName" aria-label="Floating label select example">
+            <option selected value="TomAgent">TomAgent</option>
+            <option value="AndrewAgent">AndrewAgent</option>
+        </select>
+        <label for="agentName">經銷商</label>
+    </div>
+
+    <div class="d-grid gap-2 col-6 mt-5 mx-auto">
+        <button class="btn btn-primary" type="submit" name="choosedButton" value="memberRegisterBtn"
+                onclick="memberRegister()">成員註冊
+        </button>
+        <button class="btn btn-primary" type="submit" name="choosedButton" value="configSettingBtn"
+                onclick="return configSetting()">組態設定
+        </button>
+        <button class="btn btn-primary" type="submit" name="choosedButton" value="reportQueryBtn"
+                onclick="return reportQuery()">報表查詢
+        </button>
+    </div>
+    <div id="memberError">
+
+    </div>
+</form>
+<script>
+    function memberRegister() {
+        document.form.action = "memberRegisterRequest.html";
+        document.form.submit();
+    }
+
+    function configSetting() {
+        let member = "staff1";  // input
+        if (member === "staff") {
+            document.form.action = "configMenu.html";
+            document.form.submit();
+        } else {
+            e = document.getElementById('memberError')
+            e.className = "alert alert-danger"
+            e.role = "alert"
+            e.innerHTML = "無法進入\"組態設定網站\"，因為權限不是\"Staff\"。"
+            return false
+        }
+    }
+
+    function reportQuery() {
+        let member = "manager1";  // input
+        if (member === "manager") {
+            document.form.action = "reports.html";
+            document.form.submit();
+        } else {
+            e = document.getElementById('memberError')
+            e.className = "alert alert-danger"
+            e.role = "alert"
+            e.innerHTML = "無法進入\"報表查詢網站\"，因為權限不是\"Manager\"。"
+            return false
+        }
+
+    }
+</script>
+</body>
+
+</html>

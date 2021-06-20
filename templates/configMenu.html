@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+            crossorigin="anonymous"></script>
+</head>
+
+<body>
+<form method="POST" name="form">
+    <figure class="text-center">
+        <blockquote class="blockquote">
+            <p class="fw-bold fs-1">人流管制系統</p>
+        </blockquote>
+        <figcaption class="figure-caption">
+            <p class="fw-bold fs-2">組態設定</p>
+        </figcaption>
+    </figure>
+
+    <div class="d-grid gap-2 col-6 mt-5 mx-auto">
+        <button class="btn btn-primary" type="submit" name="choosedButton"
+                value="siteConfigSettingBtn" onclick="siteConfigSetting()">場域設定
+        </button>
+        <button class="btn btn-primary" type="submit" name="choosedButton"
+                value="personflowConfigSettingBtn" onclick="personflowConfigSetting()">人流設定
+        </button>
+        <button class="btn btn-primary" type="submit" name="choosedButton"
+                value="alertNotifySettingBtn" onclick="alertNotifySetting()">警示通報
+        </button>
+    </div>
+</form>
+<script>
+    function siteConfigSetting() {
+        document.form.action = "configSite.html";
+        document.form.submit();
+    }
+
+    function personflowConfigSetting() {
+        document.form.action = "configPersonflow.html";
+        document.form.submit();
+    }
+
+    function alertNotifySetting() {
+        document.form.action = "configAlertNotify.html";
+        document.form.submit();
+    }
+</script>
+</body>
+
+</html>
