@@ -1,2 +1,5 @@
+boto3
 flask
+requests
+line-bot-sdk
 flask-bootstrap

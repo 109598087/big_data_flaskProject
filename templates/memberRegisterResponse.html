@@ -1,0 +1,27 @@
+{% extends "mobileLayout.html" %}
+
+{% block title %}成員註冊{% endblock %}
+
+{% block headContent %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bs-stepper@1.7.0/dist/css/bs-stepper.min.css">
+{% endblock %}
+
+{% block bodyContent %}
+<div style="margin:10% 10%">
+	<div style="text-align:center">
+		<h1 style="color:dodgerblue">註冊成功</h1>
+	</div>
+	<br>
+	<div class="alert alert-success">
+		姓名：{{userModel['username']}}<br>
+		UUID：{{userModel['sub'][0:18]}}<br>
+		email：{{userModel['email']}}<br>
+		LINE暱稱：{{userModel['name']}}<br>
+		Face ID：{{userModel['custom:faceId'][0:18]}}<br>
+		LINE ID：{{userModel['custom:lineId'][0:18]}}<br>
+		角色：{{userModel['ch_role']}}<br>
+		經銷商：{{userModel['agent']}}<br>
+	</div>
+</div>
+{% endblock %}
