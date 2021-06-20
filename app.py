@@ -24,7 +24,7 @@ def getMenu():
         agentName = request.form.get('agentName')
         choosedButton = request.form.get('choosedButton')
         if choosedButton == 'memberRegisterBtn':
-            return redirect(url_for("memberRegisterRequest", agentName=agentName, choosedButton=choosedButton))
+            return redirect(url_for("memberRegister", agentName=agentName, choosedButton=choosedButton))
         if choosedButton == 'configSettingBtn':
             return redirect(url_for("sign_in", choosedButton=choosedButton))
         if choosedButton == 'reportQueryBtn':
