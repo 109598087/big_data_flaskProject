@@ -207,7 +207,7 @@ def configPersonflow():
 
     if request.method == 'POST':
         personflow = request.form.get('personflow')
-        print(personflow)
+        print(int(personflow))
         return redirect(url_for('getConfigMenu', personflow=personflow))
 
 
