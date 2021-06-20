@@ -26,9 +26,9 @@ def getMenu():
         if choosedButton == 'memberRegisterBtn':
             return redirect(url_for("memberRegister", agentName=agentName, choosedButton=choosedButton))
         if choosedButton == 'configSettingBtn':
-            return redirect(url_for("sign_in", choosedButton=choosedButton))
+            return redirect(url_for("login", choosedButton=choosedButton))
         if choosedButton == 'reportQueryBtn':
-            return redirect(url_for("sign_in", choosedButton=choosedButton))
+            return redirect(url_for("login", choosedButton=choosedButton))
 
 
 @app.route("/memberRegister", methods=['GET', 'POST'])
