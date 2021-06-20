@@ -26,32 +26,16 @@
 
     <div class="d-grid gap-2 col-6 mt-5 mx-auto">
         <button class="btn btn-primary" type="submit" name="choosedButton"
-                value="siteConfigSettingBtn" onclick="siteConfigSetting()">場域設定
+                value="siteConfigSettingBtn">場域設定
         </button>
         <button class="btn btn-primary" type="submit" name="choosedButton"
-                value="personflowConfigSettingBtn" onclick="personflowConfigSetting()">人流設定
+                value="personflowConfigSettingBtn">人流設定
         </button>
         <button class="btn btn-primary" type="submit" name="choosedButton"
-                value="alertNotifySettingBtn" onclick="alertNotifySetting()">警示通報
+                value="alertNotifySettingBtn">警示通報
         </button>
     </div>
 </form>
-<script>
-    function siteConfigSetting() {
-        document.form.action = "configSite.html";
-        document.form.submit();
-    }
-
-    function personflowConfigSetting() {
-        document.form.action = "configPersonflow.html";
-        document.form.submit();
-    }
-
-    function alertNotifySetting() {
-        document.form.action = "configAlertNotify.html";
-        document.form.submit();
-    }
-</script>
 </body>
 
 </html>

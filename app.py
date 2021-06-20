@@ -27,7 +27,8 @@ def getMenu():
             return redirect(url_for("memberRegister", agentName=agentName, choosedButton=choosedButton))
         if choosedButton == 'configSettingBtn':
             btnValue = 'config'
-            return redirect(url_for("login", agentName=agentName, btnName=btnValue, choosedButton=choosedButton))
+            return redirect(
+                url_for("getConfigMenu", agentName=agentName, btnName=btnValue, choosedButton=choosedButton))
         if choosedButton == 'reportQueryBtn':
             btnValue = 'report'
             return redirect(url_for("login", agentName=agentName, btnName=btnValue, choosedButton=choosedButton))
@@ -179,10 +180,24 @@ def login(btnName, agentName):
 configController = ConfigController.ConfigController()
 
 
-@app.route("/config", methods=['GET'])
+@app.route("/config", methods=['GET', 'POST'])
 def getConfigMenu():
+    if request.method == 'POST':
+        choosedButton = request.form.get('choosedButton')
+        if choosedButton == 'siteConfigSettingBtn':
+            return redirect(url_for('configSite'))
+        if choosedButton == 'personflowConfigSettingBtn':
+            return redirect(url_for('configPersonflow'))
+        if choosedButton == 'alertNotifySettingBtn':
+            return redirect(url_for('configAlertNotify'))
     if request.method == 'GET':
         return render_template('configMenu.html', agent=agent)
+
+
+@app.route("/config/configSite/update", methods=['GET', 'POST'])
+def configSite():
+    if request.method == 'GET':
+        return render_template('configSite.html')
 
 
 @app.route("/config/configPersonflow/update", methods=['GET', 'POST'])
@@ -190,11 +205,10 @@ def configPersonflow():
     if request.method == 'GET':
         return render_template('configPersonflow.html')
 
-
-@app.route("/config/configSite/update", methods=['GET', 'POST'])
-def configSite():
-    if request.method == 'GET':
-        return render_template('configSite.html')
+    if request.method == 'POST':
+        personflow = request.form.get('personflow')
+        print(personflow)
+        return redirect(url_for('getConfigMenu', personflow=personflow))
 
 
 @app.route("/config/configAlertNotify/update", methods=['GET', 'POST'])
