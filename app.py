@@ -36,7 +36,9 @@ def getMenu():
 @app.route("/memberRegister", methods=['GET', 'POST'])
 def memberRegister():
     if request.method == 'GET':
-        return render_template('memberRegisterRequest.html', agent=agent, fidoServerUrl=fidoServerUrl)
+        agentName = request.args.get('agentName')
+        return render_template('memberRegisterRequest.html', agent=agent, agentName=agentName,
+                               fidoServerUrl=fidoServerUrl)
 
     if request.method == 'POST':
         daoModel = {
