@@ -216,6 +216,11 @@ def configAlertNotify():
     if request.method == 'GET':
         return render_template('configAlertNotify.html')
 
+    if request.method == 'POST':
+        alertSeconds = request.form.get('alertSeconds')
+        print(int(alertSeconds))
+        return redirect(url_for('getConfigMenu', personflow=alertSeconds))
+
 
 # ------------------------ ↓↓ memberRegister ↓↓ ----------------------------------
 
