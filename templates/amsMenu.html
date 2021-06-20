@@ -14,7 +14,7 @@
 </head>
 
 <body>
-<form name="form" method="POST">
+<form method="post">
     <figure class="text-center">
         <blockquote class="blockquote">
             <p class="fw-bold fs-1">人流管制系統</p>
@@ -33,55 +33,51 @@
     </div>
 
     <div class="d-grid gap-2 col-6 mt-5 mx-auto">
-        <button class="btn btn-primary" type="submit" name="choosedButton" value="memberRegisterBtn"
-                onclick="memberRegister()">成員註冊
+        <button class="btn btn-primary" type="submit" name="choosedButton" value="memberRegisterBtn">成員註冊</button>
+        <button class="btn btn-primary" type="submit" name="choosedButton" value="configSettingBtn">組態設定
         </button>
-        <button class="btn btn-primary" type="submit" name="choosedButton" value="configSettingBtn"
-                onclick="return configSetting()">組態設定
-        </button>
-        <button class="btn btn-primary" type="submit" name="choosedButton" value="reportQueryBtn"
-                onclick="return reportQuery()">報表查詢
+        <button class="btn btn-primary" type="submit" name="choosedButton" value="reportQueryBtn">報表查詢
         </button>
     </div>
     <div id="memberError">
 
     </div>
 </form>
-<script>
-    function memberRegister() {
-        document.form.action = "memberRegisterRequest.html";
-        document.form.submit();
-    }
-
-    function configSetting() {
-        let member = "staff1";  // input
-        if (member === "staff") {
-            document.form.action = "configMenu.html";
-            document.form.submit();
-        } else {
-            e = document.getElementById('memberError')
-            e.className = "alert alert-danger"
-            e.role = "alert"
-            e.innerHTML = "無法進入\"組態設定網站\"，因為權限不是\"Staff\"。"
-            return false
-        }
-    }
-
-    function reportQuery() {
-        let member = "manager1";  // input
-        if (member === "manager") {
-            document.form.action = "reports.html";
-            document.form.submit();
-        } else {
-            e = document.getElementById('memberError')
-            e.className = "alert alert-danger"
-            e.role = "alert"
-            e.innerHTML = "無法進入\"報表查詢網站\"，因為權限不是\"Manager\"。"
-            return false
-        }
-
-    }
-</script>
+{#<script>#}
+{#    function memberRegister() {#}
+{#        document.form.action = "memberRegisterRequest.html";#}
+{#        document.form.submit();#}
+{#    }#}
+{##}
+{#    function configSetting() {#}
+{#        let member = "staff1";  // input#}
+{#        if (member === "staff") {#}
+{#            document.form.action = "configMenu.html";#}
+{#            document.form.submit();#}
+{#        } else {#}
+{#            e = document.getElementById('memberError')#}
+{#            e.className = "alert alert-danger"#}
+{#            e.role = "alert"#}
+{#            e.innerHTML = "無法進入\"組態設定網站\"，因為權限不是\"Staff\"。"#}
+{#            return false#}
+{#        }#}
+{#    }#}
+{##}
+{#    function reportQuery() {#}
+{#        let member = "manager1";  // input#}
+{#        if (member === "manager") {#}
+{#            document.form.action = "reports.html";#}
+{#            document.form.submit();#}
+{#        } else {#}
+{#            e = document.getElementById('memberError')#}
+{#            e.className = "alert alert-danger"#}
+{#            e.role = "alert"#}
+{#            e.innerHTML = "無法進入\"報表查詢網站\"，因為權限不是\"Manager\"。"#}
+{#            return false#}
+{#        }#}
+{##}
+{#    }#}
+{#</script>#}
 </body>
 
 </html>

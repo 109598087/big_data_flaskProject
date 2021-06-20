@@ -7,127 +7,126 @@
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+          integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
-        crossorigin="anonymous"></script>
+            integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+            crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bs-stepper/dist/css/bs-stepper.min.css">
 </head>
 
 <body>
-    <form class="container">
-        <div class="bs-stepper">
-            <div class="bs-stepper-header" role="tablist">
-                <!-- your steps here -->
-                <div class="step" data-target="#registers-part">
-                    <button type="button" class="step-trigger" role="tab">
-                        <span class="bs-stepper-circle">1</span>
-                        <span class="bs-stepper-label">帳號註冊</span>
-                    </button>
+<form class="container">
+    <div class="bs-stepper">
+        <div class="bs-stepper-header" role="tablist">
+            <!-- your steps here -->
+            <div class="step" data-target="#registers-part">
+                <button type="button" class="step-trigger" role="tab">
+                    <span class="bs-stepper-circle">1</span>
+                    <span class="bs-stepper-label">帳號註冊</span>
+                </button>
+            </div>
+            <div class="line"></div>
+            <div class="step" data-target="#biologicals-binding-part">
+                <button type="button" class="step-trigger" role="tab">
+                    <span class="bs-stepper-circle">2</span>
+                    <span class="bs-stepper-label">生物辨識</span>
+                </button>
+            </div>
+            <div class="line"></div>
+            <div class="step" data-target="#faces-binding-part">
+                <button type="button" class="step-trigger" role="tab">
+                    <span class="bs-stepper-circle">3</span>
+                    <span class="bs-stepper-label">人臉綁定</span>
+                </button>
+            </div>
+            <div class="line"></div>
+            <div class="step" data-target="#line-group-part">
+                <button type="button" class="step-trigger" role="tab">
+                    <span class="bs-stepper-circle">4</span>
+                    <span class="bs-stepper-label">LINE群組綁定</span>
+                </button>
+            </div>
+        </div>
+        <div class="bs-stepper-content">
+            <!-- your steps content here -->
+            <div id="registers-part" class="content" role="tabpanel">
+                <p class="text-center">帳號註冊</p>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="floatingInput" value="xxx" placeholder="ex: xxx">
+                    <label for="floatingInput">姓名</label>
                 </div>
-                <div class="line"></div>
-                <div class="step" data-target="#biologicals-binding-part">
-                    <button type="button" class="step-trigger" role="tab">
-                        <span class="bs-stepper-circle">2</span>
-                        <span class="bs-stepper-label">生物辨識</span>
-                    </button>
+                <div class="form-floating mb-3">
+                    <input type="password" class="form-control" id="floatingInput" value="xxx"
+                           placeholder="ex: xxx">
+                    <label for="floatingInput">密碼</label>
                 </div>
-                <div class="line"></div>
-                <div class="step" data-target="#faces-binding-part">
-                    <button type="button" class="step-trigger" role="tab">
-                        <span class="bs-stepper-circle">3</span>
-                        <span class="bs-stepper-label">人臉綁定</span>
-                    </button>
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="floatingInput" value="xxx@gmail.com"
+                           placeholder="ex: xxx@gmail.com">
+                    <label for="floatingInput">電子郵件</label>
                 </div>
-                <div class="line"></div>
-                <div class="step" data-target="#line-group-part">
-                    <button type="button" class="step-trigger" role="tab">
-                        <span class="bs-stepper-circle">4</span>
-                        <span class="bs-stepper-label">LINE群組綁定</span>
-                    </button>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="floatingInput" value="xxx" placeholder="ex: xxx">
+                    <label for="floatingInput">LINE Nickname</label>
+                </div>
+                <p>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                           value="option1" checked>
+                    <label class="form-check-label" for="inlineRadio1">成員</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                           value="option2">
+                    <label class="form-check-label" for="inlineRadio2">工程師</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
+                           value="option3">
+                    <label class="form-check-label" for="inlineRadio3">管理員</label>
+                </div>
+                <p>經銷商：{{ agentName }}</p>
+                <button type="button" class="btn btn-primary" onclick="stepper.next()">下一步</button>
+            </div>
+            <div id="biologicals-binding-part" class="content" role="tabpanel">
+                <p class="text-center">生物辨識</p>
+                <div class="d-grid gap-4 col-3 mt-5 mx-auto">
+                    <button type="button" class="btn btn-danger">綁定</button>
+                    <button type="button" class="btn btn-success" onclick="stepper.next()">下一步</button>
+                    <!-- <button type="button" class="btn btn-success" onclick="stepper.next()" disabled>下一步</button> -->
                 </div>
             </div>
-            <div class="bs-stepper-content">
-                <!-- your steps content here -->
-                <div id="registers-part" class="content" role="tabpanel">
-                    <p class="text-center">帳號註冊</p>
-                    <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="floatingInput" value="xxx" placeholder="ex: xxx">
-                        <label for="floatingInput">姓名</label>
-                    </div>
-                    <div class="form-floating mb-3">
-                        <input type="password" class="form-control" id="floatingInput" value="xxx"
-                            placeholder="ex: xxx">
-                        <label for="floatingInput">密碼</label>
-                    </div>
-                    <div class="form-floating mb-3">
-                        <input type="email" class="form-control" id="floatingInput" value="xxx@gmail.com"
-                            placeholder="ex: xxx@gmail.com">
-                        <label for="floatingInput">電子郵件</label>
-                    </div>
-                    <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="floatingInput" value="xxx" placeholder="ex: xxx">
-                        <label for="floatingInput">LINE Nickname</label>
-                    </div>
-                    <p>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-                            value="option1" checked>
-                        <label class="form-check-label" for="inlineRadio1">成員</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
-                            value="option2">
-                        <label class="form-check-label" for="inlineRadio2">工程師</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
-                            value="option3">
-                        <label class="form-check-label" for="inlineRadio3">管理員</label>
-                    </div>
-                    </p>
-                    <p>經銷商：TomAgent</p>
-                    <button type="button" class="btn btn-primary" onclick="stepper.next()">下一步</button>
+            <div id="faces-binding-part" class="content" role="tabpanel">
+                <p class="text-center">人臉綁定</p>
+                <div class="input-group mb-3">
+                    <input type="file" class="form-control" id="inputGroupFile02">
+                    <label class="input-group-text" for="inputGroupFile02">上傳檔案</label>
                 </div>
-                <div id="biologicals-binding-part" class="content" role="tabpanel">
-                    <p class="text-center">生物辨識</p>
-                    <div class="d-grid gap-4 col-3 mt-5 mx-auto">
-                        <button type="button" class="btn btn-danger">綁定</button>
-                        <button type="button" class="btn btn-success" onclick="stepper.next()">下一步</button>
-                        <!-- <button type="button" class="btn btn-success" onclick="stepper.next()" disabled>下一步</button> -->
-                    </div>
+                <button type="button" class="btn btn-primary" onclick="stepper.next()">下一步</button>
+            </div>
+            <div id="line-group-part" class="content" role="tabpanel">
+                <p class="text-center">LINE群組綁定</p>
+                <div class="alert alert-success" role="alert">
+                    <p>步驟一：下載此QR Code至手機</p>
+                    <p>步驟二：開啟LINE掃描剛下載的QR Code</p>
+                    <p>步驟三：點擊加入群組完成綁定</p>
+                    <p>步驟四：加入群組中的人流管制機器人以便收到通知</p>
+                    <p>步驟五：回到此頁面並點擊"註冊"</p>
                 </div>
-                <div id="faces-binding-part" class="content" role="tabpanel">
-                    <p class="text-center">人臉綁定</p>
-                    <div class="input-group mb-3">
-                        <input type="file" class="form-control" id="inputGroupFile02">
-                        <label class="input-group-text" for="inputGroupFile02">上傳檔案</label>
-                    </div>
-                    <button type="button" class="btn btn-primary" onclick="stepper.next()">下一步</button>
-                </div>
-                <div id="line-group-part" class="content" role="tabpanel">
-                    <p class="text-center">LINE群組綁定</p>
-                    <div class="alert alert-success" role="alert">
-                        <p>步驟一：下載此QR Code至手機</p>
-                        <p>步驟二：開啟LINE掃描剛下載的QR Code</p>
-                        <p>步驟三：點擊加入群組完成綁定</p>
-                        <p>步驟四：加入群組中的人流管制機器人以便收到通知</p>
-                        <p>步驟五：回到此頁面並點擊"註冊"</p>
-                    </div>
-                    <div style="text-align:center">
-                        <img src="GroupQRCode.jpg" alt="ChatBot QR Code" width="60%"><br><br>
-                        <button class="btn btn-primary">註冊</button>
-                    </div>
+                <div style="text-align:center">
+                    <img src="GroupQRCode.jpg" alt="ChatBot QR Code" width="60%"><br><br>
+                    <button class="btn btn-primary">註冊</button>
                 </div>
             </div>
         </div>
-    </form>
-    <script src="https://cdn.jsdelivr.net/npm/bs-stepper/dist/js/bs-stepper.min.js"></script>
-    <script>
-        var stepper = new Stepper(document.querySelector('.bs-stepper'), {
-            animation: true
-        })
-    </script>
+    </div>
+</form>
+<script src="https://cdn.jsdelivr.net/npm/bs-stepper/dist/js/bs-stepper.min.js"></script>
+<script>
+    var stepper = new Stepper(document.querySelector('.bs-stepper'), {
+        animation: true
+    })
+</script>
 </body>
 
 </html>
