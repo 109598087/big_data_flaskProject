@@ -27,8 +27,8 @@ def getMenu():
             return redirect(url_for("memberRegister", agentName=agentName, choosedButton=choosedButton))
         if choosedButton == 'configSettingBtn':
             btnValue = 'config'
-            return redirect(
-                url_for("getConfigMenu", agentName=agentName, btnName=btnValue, choosedButton=choosedButton))
+            return redirect(url_for("getConfigMenu", agentName=agentName, btnName=btnValue, choosedButton=choosedButton))
+            # return redirect(url_for("login", agentName=agentName, btnName=btnValue, choosedButton=choosedButton))
         if choosedButton == 'reportQueryBtn':
             btnValue = 'report'
             return redirect(url_for("login", agentName=agentName, btnName=btnValue, choosedButton=choosedButton))
